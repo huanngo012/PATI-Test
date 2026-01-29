@@ -49,10 +49,18 @@
         --font-heading: "Lora";
         --font-judgeme-star: "JudgemeStar";
         --font-judgeme-icons: "JudgemeIcons";
+        --breakpoint-xs: 320px;
         --breakpoint-sm: 679px;
         --breakpoint-md-custom: 750px;
         --breakpoint-lg-custom: 992px;
         --color-green: #039869;
+        --color-green-dark: #0c7c00;
+        --color-red: #fa8a8a;
+        --color-red-dark: #a60003;
+        --color-cream: #f3eee0;
+        --color-light-gray: #f7f7f7;
+        --color-border: #d2d2d2;
+        --color-border-secondary: #fa8a8a1a;
         --text-xs--line-height: 1.3em;
         --text-sm--line-height: 1.3em;
         --text-base--line-height: 1.3em;
@@ -61,12 +69,17 @@
         --text-2xl--line-height: 1.3em;
         --animate-logo-scroll: logo_scroll 60s infinite linear;
       }
+      @layer base {
+        p {
+          @apply font-primary;
+        }
+      }
       @utility container {
         max-width: 1340px;
       }
     </style>
   </head>
-  <body class="font-primary">
+  <body class="font-secondary">
     <div id="shopify-section-secret_header" class="shopify-section">
       <div class="p-3 text-center">
         <img
@@ -77,9 +90,9 @@
     </div>
     <main
       id="MainContent"
-      class="content-for-layout shadow-none outline-none tracking-[0.6px]"
+      class="content-for-layout shadow-none outline-none tracking-[0.6px] overflow-x-hidden"
     >
-      <section>
+      <!-- <section>
         <div class="py-8">
           <div class="container mx-auto px-[15px] md-custom:px-[50px]">
             <div class="flex flex-wrap gap-4 sm:gap-16 sm:flex-nowrap">
@@ -167,7 +180,7 @@
                     </div>
                   </div>
                 </div>
-                <product-carousel class="block sm:hidden text-[15px]">
+                <product-carousel class="block sm:hidden font-secondary">
                   <div class="relative w-full">
                     <div
                       class="productView-nav block overflow-hidden [&:not(.slick-initialized)>div:nth-child(n+2)]:hidden"
@@ -455,7 +468,7 @@
                   New Maximum Potency Formula - Lymphatic Drainage Capsules by
                   Sculptique™
                 </h1>
-                <div class="leading-[1.3em]">
+                <div class="text-base">
                   <div class="flex items-center gap-3 my-4">
                     <div class="w-1/10 flex items-center">
                       <img
@@ -553,7 +566,7 @@
                   src="https://app.thefrontrowhealth.com/api/widgets?presentation_type=sticker&amp;product_id=2691"
                 ></iframe>
                 <product-selector
-                  class="block p-3 rounded-lg mb-4 leading-[1.3em] bg-[#f3eee0] [&_.active_.product-selector-perk-line]:opacity-100 [&_.active_.product-selector-bubble_div]:bg-green"
+                  class="block p-3 rounded-lg mb-4 text-base bg-cream [&_.active_.product-selector-perk-line]:opacity-100 [&_.active_.product-selector-bubble_div]:bg-green"
                 >
                   <div
                     class="product-selector-item rounded-xl relative mb-3 cursor-pointer border border-green active"
@@ -864,7 +877,7 @@
                   class="w-full"
                   src="//trysculptique.com/cdn/shop/files/CTA_Button_Add_To_Cart_8b5e7dd2-d716-4b24-a339-d8f27d86e61a.png?v=1766758486"
                 />
-                <div class="leading-[1.3em]">
+                <div class="text-base">
                   <div class="flex items-center gap-2 my-3">
                     <div class="w-1/20 flex items-center">
                       <img
@@ -888,7 +901,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="rounded-lg mt-6 p-3 bg-[#f3eee0]">
+                <div class="rounded-lg mt-6 p-3 bg-cream">
                   <div class="flex items-center gap-4 mb-2">
                     <div class="w-3/20 font-secondary">
                       <img
@@ -897,7 +910,7 @@
                         src="//trysculptique.com/cdn/shop/files/AI_Nurse_Holding_TORC_2_efcbd677-7242-4cb2-9f99-ad1e3726b19b.png?v=1752500889"
                       />
                     </div>
-                    <div class="w-full">
+                    <div class="w-full text-base">
                       <p class="flex items-center gap-2 leading-[1.3em]">
                         Margaret Ellison | FL<span class="flex items-center"
                           ><img
@@ -911,13 +924,13 @@
                       />
                     </div>
                   </div>
-                  <div>
-                    <p class="mb-2 leading-[1.3em] tracking-normal">
+                  <div class="text-base">
+                    <p class="mb-2 tracking-normal">
                       <strong class="font-semibold"
                         >Even my husband noticed... the spark came back.
                       </strong>
                     </p>
-                    <p class="leading-[1.3em] tracking-normal">
+                    <p class="tracking-normal">
                       After years of hiding under coverups, picking apart my
                       body, and feeling disconnected, I finally feel at ease
                       again. I feel less bloated, lighter, like my body is
@@ -930,10 +943,10 @@
                   </div>
                 </div>
                 <faq-accordion
-                  class="block mt-4 [&_.faq-item.active]:border-green [&_.faq-item.active_.icon]:rotate-45 leading-[1.3em]"
+                  class="block mt-4 text-base [&_.faq-item.active]:border-green [&_.faq-item.active_.icon]:rotate-45em]"
                 >
                   <div
-                    class="faq-item mb-4 p-4 rounded-4xl border border-[#d2d2d2] cursor-pointer"
+                    class="faq-item mb-4 p-4 rounded-4xl border border-border cursor-pointer"
                   >
                     <div
                       class="faq-header flex justify-between items-center gap-3"
@@ -946,7 +959,7 @@
                         />
                       </span>
                     </div>
-                    <div class="faq-content hidden pt-4 leading-[1.3em]">
+                    <div class="faq-content hidden pt-4">
                       <p class="mb-3 tracking-normal">
                         <strong>Sculptique Ingredients:</strong>
                       </p>
@@ -993,7 +1006,7 @@
                     </div>
                   </div>
                   <div
-                    class="faq-item mb-4 p-4 rounded-4xl border border-[#d2d2d2] cursor-pointer"
+                    class="faq-item mb-4 p-4 rounded-4xl border border-border cursor-pointer"
                   >
                     <div
                       class="faq-header flex justify-between items-center gap-3"
@@ -1006,7 +1019,7 @@
                         />
                       </span>
                     </div>
-                    <div class="faq-content hidden pt-4 leading-[1.3em]">
+                    <div class="faq-content hidden pt-4">
                       <p class="tracking-normal">
                         Sculptique works by improving blood flow and supporting
                         lymphatic drainage to reduce fluid buildup that causes
@@ -1017,7 +1030,7 @@
                     </div>
                   </div>
                   <div
-                    class="faq-item mb-4 p-4 rounded-4xl border border-[#d2d2d2] cursor-pointer"
+                    class="faq-item mb-4 p-4 rounded-4xl border border-border cursor-pointer"
                   >
                     <div
                       class="faq-header flex justify-between items-center gap-3"
@@ -1030,7 +1043,7 @@
                         />
                       </span>
                     </div>
-                    <div class="faq-content hidden pt-4 leading-[1.3em]">
+                    <div class="faq-content hidden pt-4">
                       <p class="mb-3 tracking-normal">
                         All of Sculptique orders get FREE shipping straight from
                         our USA warehouse. Orders are usually shipped out within
@@ -1057,9 +1070,11 @@
         <div class="relative m-auto">
           <div class="relative max-w-screen m-auto leading-none">
             <div
-              class="grid grid-cols-1 gap-x-[70px] gap-y-5 items-center justify-center content-center text-center py-5 m-auto bg-[#f3eee0]"
+              class="grid grid-cols-1 gap-x-17.5 gap-y-5 items-center justify-center content-center text-center py-5 m-auto bg-cream"
             >
-              <h3 class="text-lg leading-[1.3] tracking-normal sm:text-2xl">
+              <h3
+                class="font-tertiary leading-[1.3] text-lg tracking-normal sm:text-2xl"
+              >
                 As Seen In
               </h3>
               <div class="w-full overflow-hidden min-w-px">
@@ -1243,16 +1258,14 @@
         <div class="pt-8 sm:pt-14">
           <div class="container mx-auto px-[15px] md-custom:px-[50px]">
             <div class="max-w-200 m-auto">
-              <h2
-                class="text-2xl text-center leading-[1.3em] my-4 font-heading sm:text-[32px]"
-              >
+              <h2 class="text-2xl text-center my-4 font-heading sm:text-[32px]">
                 Why Your
                 <span class="text-green"
                   >Bloating, Brain Fog &amp; Swollen Legs</span
                 >
                 Are Actually Connected
               </h2>
-              <p class="my-4 text-center leading-[1.3em] sm:text-lg">
+              <p class="my-4 text-center text-base sm:text-lg">
                 If you're experiencing more than one of these symptoms, your
                 body is trying to tell you something:
               </p>
@@ -1266,7 +1279,7 @@
                   />
                 </div>
                 <div
-                  class="w-full min-h-37.5 text-center bg-[#f7f7f7] leading-[1.3em] flex items-center justify-center sm:block sm:p-4"
+                  class="w-full min-h-37.5 text-center bg-light-gray text-base flex items-center justify-center sm:block sm:p-4"
                 >
                   <p class="p-3 sm:p-0">
                     Your stomach is flat in the morning, but by evening you look
@@ -1282,7 +1295,7 @@
                   />
                 </div>
                 <div
-                  class="w-full min-h-37.5 text-center bg-[#f7f7f7] leading-[1.3em] flex items-center justify-center sm:block sm:p-4"
+                  class="w-full min-h-37.5 text-center bg-light-gray text-base flex items-center justify-center sm:block sm:p-4"
                 >
                   <p class="p-3 sm:p-0">
                     Your ankles disappear into "kankles" by the end of the day.
@@ -1297,7 +1310,7 @@
                   />
                 </div>
                 <div
-                  class="w-full min-h-37.5 text-center bg-[#f7f7f7] leading-[1.3em] flex items-center justify-center sm:block sm:p-4"
+                  class="w-full min-h-37.5 text-center bg-light-gray text-base flex items-center justify-center sm:block sm:p-4"
                 >
                   <p class="p-3 sm:p-0">
                     That dimpled, cottage cheese texture on your thighs won't go
@@ -1313,7 +1326,7 @@
                   />
                 </div>
                 <div
-                  class="w-full min-h-37.5 text-center bg-[#f7f7f7] leading-[1.3em] flex items-center justify-center sm:block sm:p-4"
+                  class="w-full min-h-37.5 text-center bg-light-gray text-base flex items-center justify-center sm:block sm:p-4"
                 >
                   <p class="p-3 sm:p-0">
                     You feel foggy and exhausted even after a full night's
@@ -1322,14 +1335,14 @@
                 </div>
               </div>
               <div class="flex w-full rounded-[6px] overflow-hidden sm:block">
-                <div>
+                <div class="w-full">
                   <img
                     class="inline align-baseline min-h-37.5 w-full"
                     src="//trysculptique.com/cdn/shop/files/Untitled_design_3_2.png?v=1760689799"
                   />
                 </div>
                 <div
-                  class="w-full min-h-37.5 text-center bg-[#f7f7f7] leading-[1.3em] flex items-center justify-center sm:block sm:p-4"
+                  class="w-full min-h-37.5 text-center bg-light-gray text-base flex items-center justify-center sm:block sm:p-4"
                 >
                   <p class="p-3 sm:p-0">
                     You wake up stiff and achy, like your body aged overnight.
@@ -1355,9 +1368,7 @@
               src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Frame_1000003589.png?v=1760690549"
             />
             <div class="max-w-200 m-auto">
-              <h2
-                class="text-2xl text-center leading-[1.3em] my-4 font-heading sm:text-[32px]"
-              >
+              <h2 class="text-2xl text-center my-4 font-heading sm:text-[32px]">
                 The Connection
                 <span class="text-green">You've Been Missing</span>
               </h2>
@@ -1386,16 +1397,14 @@
       <section>
         <div class="container mx-auto px-[15px] md-custom:px-[50px] sm:-mt-4">
           <div class="max-w-200 m-auto mb-6 sm:mb-10">
-            <h2
-              class="text-2xl text-center leading-[1.3em] my-4 font-heading sm:text-[32px]"
-            >
+            <h2 class="text-2xl text-center my-4 font-heading sm:text-[32px]">
               Your <span class="text-green">Hidden</span> Drainage System
             </h2>
           </div>
           <div
             class="flex items-center flex-col-reverse flex-wrap gap-4 sm:flex-row sm:flex-nowrap sm:gap-25"
           >
-            <div class="w-full leading-[1.3em] sm:text-lg">
+            <div class="w-full text-base sm:text-lg">
               <div>
                 <p class="my-2">
                   Your lymphatic system is your body's internal cleaning crew—a
@@ -1408,19 +1417,19 @@
                 <p class="my-2">
                   When it's working properly, you don't even know it exists.
                 </p>
-                <ul class="my-2">
+                <ul class="my-2 font-primary">
                   <li
-                    class="my-2 pl-8 text-[#0c7c00] bg-[url('/images/check-mark.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                    class="my-2 pl-8 text-green-dark bg-[url('/images/check-mark.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                   >
                     Waste gets drained away
                   </li>
                   <li
-                    class="my-2 pl-8 text-[#0c7c00] bg-[url('/images/check-mark.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                    class="my-2 pl-8 text-green-dark bg-[url('/images/check-mark.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                   >
                     Fluid stays balanced.
                   </li>
                   <li
-                    class="my-2 pl-8 text-[#0c7c00] bg-[url('/images/check-mark.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                    class="my-2 pl-8 text-green-dark bg-[url('/images/check-mark.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                   >
                     Your body feels light and energized.
                   </li>
@@ -1433,24 +1442,24 @@
                 </p>
               </div>
               <div>
-                <ul class="my-2">
+                <ul class="my-2 font-primary">
                   <li
-                    class="my-2 pl-8 text-[#a60003] bg-[url('/images/vector_7.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                    class="my-2 pl-8 text-red-dark bg-[url('/images/vector_7.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                   >
                     Vessel pumping weakens.
                   </li>
                   <li
-                    class="my-2 pl-8 text-[#a60003] bg-[url('/images/vector_7.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                    class="my-2 pl-8 text-red-dark bg-[url('/images/vector_7.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                   >
                     One-way valves fail.
                   </li>
                   <li
-                    class="my-2 pl-8 text-[#a60003] bg-[url('/images/vector_7.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                    class="my-2 pl-8 text-red-dark bg-[url('/images/vector_7.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                   >
                     Protein clogs form.
                   </li>
                   <li
-                    class="my-2 pl-8 text-[#a60003] bg-[url('/images/vector_7.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                    class="my-2 pl-8 text-red-dark bg-[url('/images/vector_7.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                   >
                     Vessel walls become leaky.
                   </li>
@@ -1478,7 +1487,7 @@
             <div
               class="flex items-center gap-4 flex-col-reverse flex-wrap sm:gap-25 sm:flex-row-reverse sm:flex-nowrap"
             >
-              <div class="w-full leading-[1.3em] sm:text-lg">
+              <div class="w-full text-base sm:text-lg">
                 <div>
                   <p class="my-2">
                     <strong
@@ -1499,24 +1508,24 @@
                     sitting there at noon. At dinner. While you're trying to
                     fall asleep.
                   </p>
-                  <ul class="my-2">
+                  <ul class="my-2 font-primary">
                     <li
-                      class="my-2 pl-8 text-[#a60003] bg-[url('/images/vector_7.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                      class="my-2 pl-8 text-red-dark bg-[url('/images/vector_7.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                     >
                       That's why you're bloated.
                     </li>
                     <li
-                      class="my-2 pl-8 text-[#a60003] bg-[url('/images/vector_7.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                      class="my-2 pl-8 text-red-dark bg-[url('/images/vector_7.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                     >
                       That's why your ankles swell.
                     </li>
                     <li
-                      class="my-2 pl-8 text-[#a60003] bg-[url('/images/vector_7.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                      class="my-2 pl-8 text-red-dark bg-[url('/images/vector_7.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                     >
                       That's why you see cellulite.
                     </li>
                     <li
-                      class="my-2 pl-8 text-[#a60003] bg-[url('/images/vector_7.png')] bg-[length:20px_20px] bg-no-repeat list-none font-semibold"
+                      class="my-2 pl-8 text-red-dark bg-[url('/images/vector_7.png')] bg-[length:20px] bg-no-repeat list-none font-semibold"
                     >
                       That's why you feel exhausted and foggy.
                     </li>
@@ -1552,9 +1561,7 @@
         <div class="bg-[#f7f2e7] pb-17.5 mb-[35px]">
           <div class="container mx-auto px-[15px] md-custom:px-[50px]">
             <div class="max-w-200 m-auto">
-              <h2
-                class="text-2xl text-center leading-[1.3em] my-4 font-heading sm:text-[32px]"
-              >
+              <h2 class="text-2xl text-center my-4 font-heading sm:text-[32px]">
                 Why Nothing Has <span class="text-green">Worked</span>
               </h2>
             </div>
@@ -1566,9 +1573,7 @@
                     src="//trysculptique.com/cdn/shop/files/X1.jpg?v=1760943360"
                   />
                 </div>
-                <div
-                  class="p-4 bg-[#f7f7f7] text-center leading-[1.3em] sm:p-6"
-                >
+                <div class="p-4 bg-light-gray text-center text-base sm:p-6">
                   <h4 class="text-xl font-tertiary">
                     You cut out gluten, dairy, sugar. You ate clean for months.
                   </h4>
@@ -1601,9 +1606,7 @@
                     src="//trysculptique.com/cdn/shop/files/X2.jpg?v=1760943359"
                   />
                 </div>
-                <div
-                  class="p-4 bg-[#f7f7f7] text-center leading-[1.3em] sm:p-6"
-                >
+                <div class="p-4 bg-light-gray text-center text-base sm:p-6">
                   <h4 class="text-xl font-tertiary">
                     You tried viral lymphatic drops from TikTok.
                   </h4>
@@ -1638,9 +1641,7 @@
                     src="//trysculptique.com/cdn/shop/files/X3.jpg?v=1760943359"
                   />
                 </div>
-                <div
-                  class="p-4 bg-[#f7f7f7] text-center leading-[1.3em] sm:p-6"
-                >
+                <div class="p-4 bg-light-gray text-center text-base sm:p-6">
                   <h4 class="text-xl font-tertiary">
                     You got lymphatic massage or bought compression socks.
                   </h4>
@@ -1680,16 +1681,14 @@
                 src="//trysculptique.com/cdn/shop/files/Frame_1000003583_1.png?v=1760694176"
               />
             </div>
-            <div class="mt-6 text-center">
+            <div class="mt-6 text-center text-base font-primary">
               <a
                 href="https://pay.trysculptique.com/lymphatic/checkout"
-                class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center leading-[1.3em] font-bold transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
+                class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center font-bold transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
                 >Try Lymphatic Drainage Risk-Free</a
               >
-              <p
-                class="flex items-center justify-center gap-4 leading-[1.3em] mt-4"
-              >
-                <span>
+              <p class="flex items-center justify-center gap-4 mt-4">
+                <span class="shrink-0">
                   <img
                     class="w-6 inline align-baseline"
                     src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/60-days_11622780_1_1.png?v=1752388395"
@@ -1703,16 +1702,14 @@
       </section>
 
       <section>
-        <div class="py-8 sm:py-14 bg-[#f3eee0]">
+        <div class="py-8 sm:py-14 bg-cream">
           <div class="container mx-auto px-[15px] md-custom:px-[50px]">
             <div class="max-w-200 m-auto">
-              <h2
-                class="text-2xl text-center leading-[1.3em] my-4 font-heading sm:text-[32px]"
-              >
+              <h2 class="text-2xl text-center my-4 font-heading sm:text-[32px]">
                 <span class="text-green">The 8-Ingredient System</span>
                 That Restores What Hormones Once Maintained
               </h2>
-              <p class="my-4 text-center leading-[1.3em] sm:text-lg">
+              <p class="my-4 text-center text-base sm:text-lg">
                 Sculptique is the only formula that addresses ALL 6 mechanisms
                 of lymphatic dysfunction simultaneously—not with symbolic doses,
                 but with therapeutic amounts based on clinical research.
@@ -1723,13 +1720,13 @@
               </p>
             </div>
             <faq-accordion
-              class="grid bg-white rounded-xl border-[0.5px] border-black overflow-hidden mt-10 sm:grid-cols-4"
+              class="grid bg-white rounded-xl border-[0.5px] text-base border-black overflow-hidden mt-10 sm:grid-cols-4"
             >
               <div
                 class="faq-item border-[0.5px] border-black p-4 cursor-pointer sm:p-6"
               >
                 <p
-                  class="flex items-center justify-center gap-2 text-[#0c7c00]"
+                  class="flex items-center justify-center gap-2 text-green-dark leading-[1.8]"
                 >
                   <span>
                     <img
@@ -1744,9 +1741,7 @@
                   loading="lazy"
                   src="//trysculptique.com/cdn/shop/files/Frame_1484580382.png?v=1760698909"
                 />
-                <div
-                  class="flex items-center justify-between gap-2 leading-[1.3em]"
-                >
+                <div class="flex items-center justify-between gap-2">
                   <div class="w-1/5 sm:hidden">
                     <img
                       class="block max-h-20 w-auto max-w-full"
@@ -1768,7 +1763,7 @@
                     />
                   </div>
                 </div>
-                <div class="faq-content hidden pt-3 text-sm leading-[1.3em]">
+                <div class="faq-content hidden pt-3 text-sm">
                   <p>
                     Restores rhythmic vessel contractions that move lymph
                     through your system. Contains iridoids that "wake up" muscle
@@ -1785,7 +1780,7 @@
                 class="faq-item border-[0.5px] border-black p-4 cursor-pointer sm:p-6"
               >
                 <p
-                  class="flex items-center justify-center gap-2 text-[#0c7c00]"
+                  class="flex items-center justify-center gap-2 text-green-dark leading-[1.8]"
                 >
                   <span>
                     <img
@@ -1800,9 +1795,7 @@
                   loading="lazy"
                   src="//trysculptique.com/cdn/shop/files/Frame_1484580382_1.png?v=1760939908"
                 />
-                <div
-                  class="flex items-center justify-between gap-2 leading-[1.3em]"
-                >
+                <div class="flex items-center justify-between gap-2">
                   <div class="w-1/5 sm:hidden">
                     <img
                       class="block max-h-20 w-auto max-w-full"
@@ -1824,7 +1817,7 @@
                     />
                   </div>
                 </div>
-                <div class="faq-content hidden pt-3 text-sm leading-[1.3em]">
+                <div class="faq-content hidden pt-3 text-sm">
                   <p>
                     Proven gentle diuretic that increases fluid excretion
                     without harsh side effects. Human trial showed statistically
@@ -1838,7 +1831,7 @@
                 class="faq-item border-[0.5px] border-black p-4 cursor-pointer sm:p-6"
               >
                 <p
-                  class="flex items-center justify-center gap-2 text-[#0c7c00]"
+                  class="flex items-center justify-center gap-2 text-green-dark leading-[1.8]"
                 >
                   <span>
                     <img
@@ -1853,9 +1846,7 @@
                   loading="lazy"
                   src="//trysculptique.com/cdn/shop/files/image_2.png?v=1760939909"
                 />
-                <div
-                  class="flex items-center justify-between gap-2 leading-[1.3em]"
-                >
+                <div class="flex items-center justify-between gap-2">
                   <div class="w-1/5 sm:hidden">
                     <img
                       class="block max-h-20 w-auto max-w-full"
@@ -1877,7 +1868,7 @@
                     />
                   </div>
                 </div>
-                <div class="faq-content hidden pt-3 text-sm leading-[1.3em]">
+                <div class="faq-content hidden pt-3 text-sm">
                   <p>
                     Proteolytic enzyme that clears blockages preventing
                     drainage. Breaks down fibrin proteins creating "sludge" in
@@ -1894,7 +1885,7 @@
                 class="faq-item border-[0.5px] border-black p-4 cursor-pointer sm:p-6"
               >
                 <p
-                  class="flex items-center justify-center gap-2 text-[#0c7c00]"
+                  class="flex items-center justify-center gap-2 text-green-dark leading-[1.8]"
                 >
                   <span>
                     <img
@@ -1909,9 +1900,7 @@
                   loading="lazy"
                   src="//trysculptique.com/cdn/shop/files/image_3.png?v=1760939909"
                 />
-                <div
-                  class="flex items-center justify-between gap-2 leading-[1.3em]"
-                >
+                <div class="flex items-center justify-between gap-2">
                   <div class="w-1/5 sm:hidden">
                     <img
                       class="block max-h-20 w-auto max-w-full"
@@ -1933,7 +1922,7 @@
                     />
                   </div>
                 </div>
-                <div class="faq-content hidden pt-3 text-sm leading-[1.3em]">
+                <div class="faq-content hidden pt-3 text-sm">
                   <p>
                     Reduces vessel permeability so fluid doesn't leak back into
                     tissues. Clinical trials showed average 4.2 cm reduction in
@@ -1946,7 +1935,7 @@
                 class="faq-item border-[0.5px] border-black p-4 cursor-pointer sm:p-6"
               >
                 <p
-                  class="flex items-center justify-center gap-2 text-[#0c7c00]"
+                  class="flex items-center justify-center gap-2 text-green-dark leading-[1.8]"
                 >
                   <span>
                     <img
@@ -1961,9 +1950,7 @@
                   loading="lazy"
                   src="//trysculptique.com/cdn/shop/files/Frame_1484580382_2.png?v=1760939909"
                 />
-                <div
-                  class="flex items-center justify-between gap-2 leading-[1.3em]"
-                >
+                <div class="flex items-center justify-between gap-2">
                   <div class="w-1/5 sm:hidden">
                     <img
                       class="block max-h-20 w-auto max-w-full"
@@ -1985,7 +1972,7 @@
                     />
                   </div>
                 </div>
-                <div class="faq-content hidden pt-3 text-sm leading-[1.3em]">
+                <div class="faq-content hidden pt-3 text-sm">
                   <p>
                     Breaks the inflammation-congestion cycle. RCT showed
                     significantly decreased inflammatory markers IL-6 and
@@ -1999,7 +1986,7 @@
                 class="faq-item border-[0.5px] border-black p-4 cursor-pointer sm:p-6"
               >
                 <p
-                  class="flex items-center justify-center gap-2 text-[#0c7c00]"
+                  class="flex items-center justify-center gap-2 text-green-dark leading-[1.8]"
                 >
                   <span>
                     <img
@@ -2014,9 +2001,7 @@
                   loading="lazy"
                   src="//trysculptique.com/cdn/shop/files/image_4.png?v=1760939909"
                 />
-                <div
-                  class="flex items-center justify-between gap-2 leading-[1.3em]"
-                >
+                <div class="flex items-center justify-between gap-2">
                   <div class="w-1/5 sm:hidden">
                     <img
                       class="block max-h-20 w-auto max-w-full"
@@ -2038,7 +2023,7 @@
                     />
                   </div>
                 </div>
-                <div class="faq-content hidden pt-3 text-sm leading-[1.3em]">
+                <div class="faq-content hidden pt-3 text-sm">
                   <p>
                     Enhances lymphocyte activity for better waste removal.
                     Meta-analysis of 30 trials with 5,600+ participants showed
@@ -2051,7 +2036,7 @@
                 class="faq-item border-[0.5px] border-black p-4 cursor-pointer sm:p-6"
               >
                 <p
-                  class="flex items-center justify-center gap-2 text-[#0c7c00]"
+                  class="flex items-center justify-center gap-2 text-green-dark leading-[1.8]"
                 >
                   <span>
                     <img
@@ -2066,9 +2051,7 @@
                   loading="lazy"
                   src="//trysculptique.com/cdn/shop/files/Frame_1484580382_3.png?v=1760939909"
                 />
-                <div
-                  class="flex items-center justify-between gap-2 leading-[1.3em]"
-                >
+                <div class="flex items-center justify-between gap-2">
                   <div class="w-1/5 sm:hidden">
                     <img
                       class="block max-h-20 w-auto max-w-full"
@@ -2090,7 +2073,7 @@
                     />
                   </div>
                 </div>
-                <div class="faq-content hidden pt-3 text-sm leading-[1.3em]">
+                <div class="faq-content hidden pt-3 text-sm">
                   <p>
                     Provides iodine for thyroid function and healthy metabolic
                     rate. Sluggish thyroid = sluggish lymphatic drainage.
@@ -2104,7 +2087,7 @@
                 class="faq-item border-[0.5px] border-black p-4 cursor-pointer sm:p-6"
               >
                 <p
-                  class="flex items-center justify-center gap-2 text-[#0c7c00]"
+                  class="flex items-center justify-center gap-2 text-green-dark leading-[1.8]"
                 >
                   <span>
                     <img
@@ -2119,9 +2102,7 @@
                   loading="lazy"
                   src="//trysculptique.com/cdn/shop/files/Frame_1484580382_4.png?v=1760939910"
                 />
-                <div
-                  class="flex items-center justify-between gap-2 leading-[1.3em]"
-                >
+                <div class="flex items-center justify-between gap-2">
                   <div class="w-1/5 sm:hidden">
                     <img
                       class="block max-h-20 w-auto max-w-full"
@@ -2143,7 +2124,7 @@
                     />
                   </div>
                 </div>
-                <div class="faq-content hidden pt-3 text-sm leading-[1.3em]">
+                <div class="faq-content hidden pt-3 text-sm">
                   <p>
                     Protects vessels from oxidative damage. RCT showed 145%
                     improvement in vascular function (p&lt;0.001). Supports
@@ -2177,12 +2158,10 @@
                 class="block max-w-50 mx-auto"
                 src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Trustpilot_Score.png?v=1752349211"
               />
-              <h2
-                class="text-2xl text-center leading-[1.3em] my-4 font-heading sm:text-[32px]"
-              >
+              <h2 class="text-2xl text-center my-4 font-heading sm:text-[32px]">
                 Real Women, Real Results: 93,000+ Transformations
               </h2>
-              <p class="my-4 text-center leading-[1.3em] sm:text-lg">
+              <p class="my-4 text-center text-base sm:text-lg">
                 All reviews verified from actual paying customers
               </p>
             </div>
@@ -2201,29 +2180,27 @@
                   >
                     <div class="inline-block text-left text-black/75">
                       <div>
-                        <div class="inline-flex font-judgeme-star">
+                        <div class="inline-flex text-[16px] font-judgeme-star">
                           <div
-                            class="inline text-[#fa8a8a] font-bold pr-1 before:content-['\e000']"
+                            class="inline text-red font-bold pr-1 before:content-['\e000']"
                           ></div>
                           <div
-                            class="inline text-[#fa8a8a] font-bold pr-1 before:content-['\e000']"
+                            class="inline text-red font-bold pr-1 before:content-['\e000']"
                           ></div>
                           <div
-                            class="inline text-[#fa8a8a] font-bold pr-1 before:content-['\e000']"
+                            class="inline text-red font-bold pr-1 before:content-['\e000']"
                           ></div>
                           <div
-                            class="inline text-[#fa8a8a] font-bold pr-1 before:content-['\e000']"
+                            class="inline text-red font-bold pr-1 before:content-['\e000']"
                           ></div>
                           <div
-                            class="inline text-[#fa8a8a] font-bold pr-1 before:content-['\e002']"
+                            class="inline text-red font-bold pr-1 before:content-['\e002']"
                           ></div>
                         </div>
-                        <span class="text-[15px] md-custom:text-base"
-                          >4.68 out of 5</span
-                        >
+                        <span>4.68 out of 5</span>
                       </div>
                       <div
-                        class="flex items-center justify-center gap-2 text-[15px] md-custom:text-base leading-[1.4] lg-custom:justify-start"
+                        class="flex items-center justify-center gap-2 lg-custom:justify-start"
                       >
                         Based on 111 reviews
                         <img
@@ -2235,176 +2212,180 @@
                     </div>
                   </div>
                   <div
-                    class="flex flex-col items-center justify-center border-l border-[#fa8a8a1a] text-[80%] mb-6 lg-custom:mb-0 lg-custom:w-4/10"
+                    class="flex flex-col items-center justify-center border-l border-border-secondary mb-6 lg-custom:mb-0 lg-custom:w-4/10"
                   >
-                    <div class="cursor-pointer h-3.5 mb-2.5 hover:opacity-60">
+                    <div
+                      class="cursor-pointer mb-2.5 hover:opacity-60 flex flex-col items-center w-full leading-[1.5] mb-1 xs:inline-block xs:h-3.5 xs:leading-[1.4]"
+                    >
                       <div
-                        class="inline-flex align-middle leading-[14px] font-judgeme-star font-bold"
+                        class="inline-flex align-middle font-judgeme-star font-bold mb-1 leading-[22.5px] xs:leading-[14px] xs:mb-0"
                       >
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] h-full w-[126px] mx-4 md:w-35 md:mx-6"
+                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] w-8/10 my-1 xs:my-0 xs:w-[126px] mx-4 h-3.5 xs:h-full md:w-35 md:mx-6"
                       >
-                        <div class="h-full w-77/100 bg-[#FA8A8A]"></div>
+                        <div class="h-full w-77/100 bg-red"></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] w-6 text-left text-[#7b7b7b]"
+                        class="inline-block align-middle mt-1 w-full text-center xs:text-left text-[#7b7b7b] xs:leading-[14px] xs:mt-0 xs:w-6"
                       >
                         85
                       </div>
                     </div>
-                    <div class="cursor-pointer h-3.5 mb-2.5 hover:opacity-60">
+                    <div
+                      class="cursor-pointer mb-2.5 hover:opacity-60 flex flex-col items-center w-full leading-[1.5] mb-1 xs:inline-block xs:h-3.5 xs:leading-[1.4]"
+                    >
                       <div
-                        class="inline-flex align-middle leading-[14px] font-judgeme-star font-bold"
+                        class="inline-flex align-middle font-judgeme-star font-bold mb-1 leading-[22.5px] xs:leading-[14px] xs:mb-0"
                       >
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] h-full w-[126px] mx-4 md:w-35 md:mx-6"
+                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] w-8/10 my-1 xs:my-0 xs:w-[126px] mx-4 h-3.5 xs:h-full md:w-35 md:mx-6"
                       >
-                        <div
-                          class="h-full w-3/20 bg-[#FA8A8A] opacity-80"
-                        ></div>
+                        <div class="h-full w-3/20 bg-red opacity-80"></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] w-6 text-left text-[#7b7b7b]"
+                        class="inline-block align-middle mt-1 w-full text-center xs:text-left text-[#7b7b7b] xs:leading-[14px] xs:mt-0 xs:w-6"
                       >
                         17
                       </div>
                     </div>
-                    <div class="cursor-pointer h-3.5 mb-2.5 hover:opacity-60">
+                    <div
+                      class="cursor-pointer mb-2.5 hover:opacity-60 flex flex-col items-center w-full leading-[1.5] mb-1 xs:inline-block xs:h-3.5 xs:leading-[1.4]"
+                    >
                       <div
-                        class="inline-flex align-middle leading-[14px] font-judgeme-star font-bold"
+                        class="inline-flex align-middle font-judgeme-star font-bold mb-1 leading-[22.5px] xs:leading-[14px] xs:mb-0"
                       >
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] h-full w-[126px] mx-4 md:w-35 md:mx-6"
+                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] w-8/10 my-1 xs:my-0 xs:w-[126px] mx-4 h-3.5 xs:h-full md:w-35 md:mx-6"
                       >
-                        <div
-                          class="h-full w-7/100 bg-[#FA8A8A] opacity-80"
-                        ></div>
+                        <div class="h-full w-7/100 bg-red opacity-80"></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] w-6 text-left text-[#7b7b7b]"
+                        class="inline-block align-middle mt-1 w-full text-center xs:text-left text-[#7b7b7b] xs:leading-[14px] xs:mt-0 xs:w-6"
                       >
                         8
                       </div>
                     </div>
-                    <div class="cursor-pointer h-3.5 mb-2.5 hover:opacity-60">
+                    <div
+                      class="cursor-pointer mb-2.5 hover:opacity-60 flex flex-col items-center w-full leading-[1.5] mb-1 xs:inline-block xs:h-3.5 xs:leading-[1.4]"
+                    >
                       <div
-                        class="inline-flex align-middle leading-[14px] font-judgeme-star font-bold"
+                        class="inline-flex align-middle font-judgeme-star font-bold mb-1 leading-[22.5px] xs:leading-[14px] xs:mb-0"
                       >
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] h-full w-[126px] mx-4 md:w-35 md:mx-6"
+                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] w-8/10 my-1 xs:my-0 xs:w-[126px] mx-4 h-3.5 xs:h-full md:w-35 md:mx-6"
                       >
-                        <div
-                          class="h-full w-1/100 bg-[#FA8A8A] opacity-80"
-                        ></div>
+                        <div class="h-full w-1/100 bg-red opacity-80"></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] w-6 text-left text-[#7b7b7b]"
+                        class="inline-block align-middle mt-1 w-full text-center xs:text-left text-[#7b7b7b] xs:leading-[14px] xs:mt-0 xs:w-6"
                       >
                         1
                       </div>
                     </div>
-                    <div class="cursor-pointer h-3.5">
+                    <div
+                      class="cursor-pointer hover:opacity-60 flex flex-col items-center w-full leading-[1.5] xs:inline-block xs:h-3.5 xs:leading-[1.4]"
+                    >
                       <div
-                        class="inline-flex align-middle leading-[14px] font-judgeme-star font-bold"
+                        class="inline-flex align-middle font-judgeme-star font-bold mb-1 leading-[22.5px] xs:leading-[14px] xs:mb-0"
                       >
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e000']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e000']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                         <div
-                          class="inline text-[13px] text-[#fa8a8a] pr-[3px] before:content-['\e001']"
+                          class="inline text-[13px] text-red pr-[3px] before:content-['\e001']"
                         ></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] h-full w-[126px] mx-4 md:w-35 md:mx-6"
+                        class="inline-block align-middle leading-[14px] bg-[#e0e0e080] w-8/10 my-1 xs:my-0 xs:w-[126px] mx-4 h-3.5 xs:h-full md:w-35 md:mx-6"
                       >
-                        <div class="h-full w-0 bg-[#FA8A8A]"></div>
+                        <div class="h-full w-0 bg-red opacity-80"></div>
                       </div>
                       <div
-                        class="inline-block align-middle leading-[14px] w-6 text-left text-[#7b7b7b]"
+                        class="inline-block align-middle mt-1 w-full text-center xs:text-left text-[#7b7b7b] xs:leading-[14px] xs:mt-0 xs:w-6"
                       >
                         0
                       </div>
                     </div>
                   </div>
                   <div
-                    class="flex flex-col items-center justify-center border-l border-[#fa8a8a1a] mb-6 lg-custom:mb-0 lg-custom:w-3/10"
+                    class="flex flex-col items-center justify-center border-l border-border-secondary mb-6 lg-custom:mb-0 lg-custom:w-3/10"
                   >
                     <a
                       href="#"
-                      class="w-full mx-auto py-2.5 px-5 font-bold leading-none bg-[#fa8a8a] text-white border-2 border-[#fa8a8a] w-full hover:opacity-80 md:max-w-60"
+                      class="w-full mx-auto py-2.5 px-5 font-bold text-base leading-none bg-red text-white border-2 border-red w-full hover:opacity-80 md:max-w-60"
                       role="button"
                       aria-expanded="false"
                       data-review-toggle
@@ -2417,13 +2398,11 @@
                 <review-form>
                   <div
                     data-review-form
-                    class="hidden py-6 border-t border-[#fa8a8a1a]"
+                    class="hidden py-6 border-t border-border-secondary"
                   >
-                    <form
-                      class="mx-auto px-4 max-w-150 font-secondary text-[15px] md-custom:text-base leading-[1.4]!"
-                    >
+                    <form class="mx-auto px-4 max-w-150">
                       <div
-                        class="text-[22.5px] mb-4 font-bold text-black/75 md-custom:text-2xl"
+                        class="text-[22.5px] mb-4 font-bold text-black/75 md-custom:text-2xl leading-[1.4]"
                       >
                         Write a review
                       </div>
@@ -2434,23 +2413,23 @@
                           data-star-rating
                         >
                           <a
-                            class="text-[150%] text-[#fa8a8a] before:content-['\e001'] pr-1 hover:opacity-60"
+                            class="text-[150%] text-red before:content-['\e001'] pr-1 hover:opacity-60"
                           >
                           </a>
                           <a
-                            class="text-[150%] text-[#fa8a8a] before:content-['\e001'] pr-1 hover:opacity-60"
+                            class="text-[150%] text-red before:content-['\e001'] pr-1 hover:opacity-60"
                           >
                           </a>
                           <a
-                            class="text-[150%] text-[#fa8a8a] before:content-['\e001'] pr-1 hover:opacity-60"
+                            class="text-[150%] text-red before:content-['\e001'] pr-1 hover:opacity-60"
                           >
                           </a>
                           <a
-                            class="text-[150%] text-[#fa8a8a] before:content-['\e001'] pr-1 hover:opacity-60"
+                            class="text-[150%] text-red before:content-['\e001'] pr-1 hover:opacity-60"
                           >
                           </a>
                           <a
-                            class="text-[150%] text-[#fa8a8a] before:content-['\e001'] pr-1 hover:opacity-60"
+                            class="text-[150%] text-red before:content-['\e001'] pr-1 hover:opacity-60"
                           >
                           </a>
                         </div>
@@ -2462,7 +2441,7 @@
                           >Review content</label
                         >
                         <textarea
-                          class="py-2 px-4 border border-[#e4e4e4] appearance-none w-full text-[13.33px] focus-visible:border-[#fa8a8a] focus-visible:outline-none"
+                          class="py-2 px-4 border border-[#e4e4e4] tracking-normal appearance-none w-full text-[13.3333px] focus-visible:border-red focus-visible:outline-none placeholder:text-black/60"
                           id="jdgm_review_body_fmdmck5k"
                           rows="5"
                           name="review_body"
@@ -2512,7 +2491,7 @@
                             class="float-none relative inline-flex items-center"
                           >
                             <select
-                              class="py-2.5 pr-5 text-sm appearance-none bg-transparent border-none cursor-pointer relative z-1 text-[#fa8a8a] tracking-normal font-['Arial'] leading-[1.4]"
+                              class="py-2.5 pr-5 text-sm appearance-none bg-transparent border-none cursor-pointer relative z-1 text-red tracking-normal font-['Arial'] leading-[1.4]"
                               name="reviewer_name_format"
                               id="jdgm_review_reviewer_name_format_fmdmck5k"
                               aria-label="Name format"
@@ -2524,13 +2503,13 @@
                               <option value="anonymous">Anonymous</option>
                             </select>
                             <span
-                              class="font-judgeme-icons absolute right-0.5 rotate-90 text-[#fa8a8a] before:content-['\e003'] before:text-lg"
+                              class="font-judgeme-icons absolute right-0.5 rotate-90 text-red before:content-['\e003'] before:text-lg"
                             ></span>
                           </span>
                           )
                         </span>
                         <input
-                          class="py-2 px-4 border border-[#e4e4e4] appearance-none w-full text-[13.33px] focus-visible:border-[#fa8a8a] focus-visible:outline-none"
+                          class="py-2 px-4 border border-[#e4e4e4] appearance-none w-full text-[13.3333px] tracking-normal focus-visible:border-red focus-visible:outline-none placeholder:text-black/60"
                           id="jdgm_review_reviewer_name_fmdmck5k"
                           name="reviewer_name"
                           type="text"
@@ -2546,7 +2525,7 @@
                           Email address</label
                         >
                         <input
-                          class="py-2 px-4 border border-[#e4e4e4] appearance-none w-full text-[13.33px] focus-visible:border-[#fa8a8a] focus-visible:outline-none"
+                          class="py-2 px-4 border border-[#e4e4e4] appearance-none w-full text-[13.3333px] tracking-normal focus-visible:border-red focus-visible:outline-none placeholder:text-black/60"
                           id="jdgm_review_reviewer_email_fmdmck5k"
                           name="reviewer_email"
                           type="email"
@@ -2590,13 +2569,13 @@
                           data-review-cancel
                           href="#judgeme_product_reviews"
                           role="button"
-                          class="inline-block py-2.5 px-5 font-bold leading-none no-underline text-[#fa8a8a] border-2 border-[#fa8a8a] md-custom:mr-2.5 hover:opacity-60"
+                          class="inline-block py-2.5 px-5 font-bold leading-none no-underline text-red border-2 border-red md-custom:mr-2.5 hover:opacity-60"
                           >Cancel review</a
                         >
                         <a
                           href="#"
                           role="button"
-                          class="inline-block py-2.5 px-5 font-bold leading-none no-underline bg-[#fa8a8a] text-white border-2 border-[#fa8a8a] hover:opacity-80"
+                          class="inline-block py-2.5 px-5 font-bold leading-none tracking-normal no-underline bg-red text-white border-2 border-red hover:opacity-80"
                           >Submit Review</a
                         >
                       </div>
@@ -2604,10 +2583,10 @@
                   </div>
                 </review-form>
                 <div
-                  class="flex flex-col items-center justify-center border-t border-[#fa8a8a1a]"
+                  class="flex flex-col items-center justify-center border-t border-border-secondary"
                 >
                   <div
-                    class="inline-block align-middle p-4 border-t border-[#fa8a8a1a] w-full lg-custom:pl-8"
+                    class="inline-block align-middle p-4 border-t border-border-secondary w-full lg-custom:pl-8"
                   >
                     <div class="inline-block max-w-full">
                       <div class="overflow-auto whitespace-nowrap py-4">
@@ -2621,7 +2600,7 @@
                               />
                             </div>
                             <div
-                              class="absolute -bottom-4.5 left-6 text-xs text-[#4c8eda] tracking-normal font-bold px-1"
+                              class="absolute -bottom-4.5 left-6 text-xs text-[#4c8eda] tracking-normal font-bold px-1 font-['Arial']"
                             >
                               100.0
                             </div>
@@ -2633,11 +2612,11 @@
                 </div>
               </div>
               <div
-                class="relative flex flex-col py-2 border-t border-[#fa8a8a1a]"
+                class="relative flex flex-col py-2 border-t border-border-secondary"
               >
                 <div class="relative inline-flex items-center w-fit">
                   <select
-                    class="py-2.5 pr-5 text-sm appearance-none bg-transparent border-none cursor-pointer relative z-1 text-[#fa8a8a] tracking-normal font-['Arial'] leading-[1.4]"
+                    class="py-2.5 pr-5 text-sm appearance-none bg-transparent border-none cursor-pointer relative z-1 text-red tracking-normal font-['Arial'] leading-[1.4]"
                     aria-label="Sort dropdown"
                   >
                     <option value="most-recent">Most Recent</option>
@@ -2649,7 +2628,7 @@
                     <option value="most-helpful">Most Helpful</option>
                   </select>
                   <span
-                    class="font-judgeme-icons absolute right-0.5 rotate-90 text-[#fa8a8a] before:content-['\e003'] before:text-lg"
+                    class="font-judgeme-icons absolute right-0.5 rotate-90 text-red before:content-['\e003'] before:text-lg"
                   ></span>
                 </div>
               </div>
@@ -2657,24 +2636,24 @@
                 class="relative leading-[1.4]! text-[15px] md-custom:text-base"
               >
                 <div>
-                  <div class="py-4 border-t border-[#fa8a8a1a]">
+                  <div class="py-4 border-t border-border-secondary">
                     <div class="mb-2.5">
-                      <div class="mb-[7px] md-custom:mb-2">
+                      <div class="mb-2 md-custom:mb-2">
                         <span class="inline-flex font-judgeme-star font-bold">
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] before:content-['\e000']"
+                            class="inline text-red before:content-['\e000']"
                           ></span>
                         </span>
                         <span
@@ -2684,12 +2663,12 @@
                       </div>
                       <div>
                         <div
-                          class="float-left relative mr-2 w-9 h-9 leading-9 text-center bg-[rgba(224,224,224,0.5)] before:font-judgeme-icons before:content-['\e007'] before:text-2xl before:leading-9 before:text-[#fa8a8a] after:font-judgeme-icons after:content-['\e001'] after:absolute after:bottom-0 after:right-0 after:w-3 after:h-3 after:text-white after:text-[8px] after:font-bold after:leading-3 after:text-center after:bg-[#FA8A8A]"
+                          class="float-left relative mr-2 w-9 h-9 leading-9 text-center bg-[rgba(224,224,224,0.5)] before:font-judgeme-icons before:content-['\e007'] before:text-2xl before:leading-9 before:text-red after:font-judgeme-icons after:content-['\e001'] after:absolute after:bottom-0 after:right-0 after:w-3 after:h-3 after:text-white after:text-[8px] after:font-bold after:leading-3 after:text-center after:bg-red"
                         ></div>
                         <div class="font-secondary">
-                          <span class="text-[#fa8a8a]">Herman Buckley</span>
+                          <span class="text-red">Herman Buckley</span>
                           <span
-                            class="bg-[#FA8A8A] text-white text-xs py-[0.5px] px-1.5 leading-none ml-[5px]"
+                            class="bg-red text-white text-xs py-[0.5px] px-1.5 leading-none ml-[5px]"
                             >Verified</span
                           >
                         </div>
@@ -2705,24 +2684,24 @@
                       <div class="my-4"></div>
                     </div>
                   </div>
-                  <div class="py-4 border-t border-[#fa8a8a1a]">
+                  <div class="py-4 border-t border-border-secondary">
                     <div class="mb-2.5">
-                      <div class="mb-[7px] md-custom:mb-2">
+                      <div class="mb-2 md-custom:mb-2">
                         <span class="inline-flex font-judgeme-star font-bold">
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] before:content-['\e000']"
+                            class="inline text-red before:content-['\e000']"
                           ></span>
                         </span>
                         <span
@@ -2732,12 +2711,12 @@
                       </div>
                       <div>
                         <div
-                          class="float-left relative mr-2 w-9 h-9 leading-9 text-center bg-[rgba(224,224,224,0.5)] before:font-judgeme-icons before:content-['\e007'] before:text-2xl before:leading-9 before:text-[#fa8a8a] after:font-judgeme-icons after:content-['\e001'] after:absolute after:bottom-0 after:right-0 after:w-3 after:h-3 after:text-white after:text-[8px] after:font-bold after:leading-3 after:text-center after:bg-[#FA8A8A]"
+                          class="float-left relative mr-2 w-9 h-9 leading-9 text-center bg-[rgba(224,224,224,0.5)] before:font-judgeme-icons before:content-['\e007'] before:text-2xl before:leading-9 before:text-red after:font-judgeme-icons after:content-['\e001'] after:absolute after:bottom-0 after:right-0 after:w-3 after:h-3 after:text-white after:text-[8px] after:font-bold after:leading-3 after:text-center after:bg-red"
                         ></div>
                         <div class="font-secondary">
-                          <span class="text-[#fa8a8a]">Anonymous</span>
+                          <span class="text-red">Anonymous</span>
                           <span
-                            class="bg-[#FA8A8A] text-white text-xs py-[0.5px] px-1.5 leading-none ml-[5px]"
+                            class="bg-red text-white text-xs py-[0.5px] px-1.5 leading-none ml-[5px]"
                             >Verified</span
                           >
                         </div>
@@ -2757,21 +2736,21 @@
                       <div class="my-4"></div>
                     </div>
                   </div>
-                  <div class="py-4 border-t border-[#fa8a8a1a]">
+                  <div class="py-4 border-t border-border-secondary">
                     <div class="mb-2.5">
-                      <div class="mb-[7px] md-custom:mb-2">
+                      <div class="mb-2 md-custom:mb-2">
                         <span class="inline-flex font-judgeme-star font-bold">
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
-                            class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
+                            class="inline text-red pr-1 before:content-['\e000']"
                           ></span>
                           <span
                             class="inline text-[#fa8a8a] before:content-['\e000']"
@@ -2805,9 +2784,9 @@
                       <div class="my-4"></div>
                     </div>
                   </div>
-                  <div class="py-4 border-t border-[#fa8a8a1a]">
+                  <div class="py-4 border-t border-border-secondary">
                     <div class="mb-2.5">
-                      <div class="mb-[7px] md-custom:mb-2">
+                      <div class="mb-2 md-custom:mb-2">
                         <span class="inline-flex font-judgeme-star font-bold">
                           <span
                             class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
@@ -2858,9 +2837,9 @@
                       <div class="my-4"></div>
                     </div>
                   </div>
-                  <div class="py-4 border-t border-[#fa8a8a1a]">
+                  <div class="py-4 border-t border-border-secondary">
                     <div class="mb-2.5">
-                      <div class="mb-[7px] md-custom:mb-2">
+                      <div class="mb-2 md-custom:mb-2">
                         <span class="inline-flex font-judgeme-star font-bold">
                           <span
                             class="inline text-[#fa8a8a] pr-1 before:content-['\e000']"
@@ -2912,25 +2891,25 @@
                   </div>
                 </div>
                 <div
-                  class="py-4 w-full text-center border-t border-[#fa8a8a1a]"
+                  class="inline-flex items-center justify-center py-4 w-full text-center border-t border-border-secondary"
                 >
                   <a
                     class="inline-block py-1 px-2 w-8 align-midle leading-none text-[#7b7b7b] font-bold text-[150%] pointer-events-none"
                     >1</a
                   >
                   <a
-                    class="inline-block py-1 px-2 w-8 align-midle leading-none text-[#fa8a8a] cursor-pointer"
+                    class="inline-block py-1 px-2 w-8 align-midle leading-none text-[#fa8a8a] cursor-pointer hover:opacity-60"
                     >2</a
                   >
                   <a
-                    class="inline-block py-1 px-2 w-8 align-midle leading-none text-[#fa8a8a] cursor-pointer"
+                    class="inline-block py-1 px-2 w-8 align-midle leading-none text-[#fa8a8a] cursor-pointer hover:opacity-60"
                     >3</a
                   >
                   <a
-                    class="inline p-1 align-midle leading-none text-[110%] font-bold cursor-pointer text-[#fa8a8a] font-judgeme-icons before:content-['\e003']"
+                    class="inline p-1 align-midle leading-none text-[110%] font-bold cursor-pointer text-[#fa8a8a] font-judgeme-icons hover:opacity-60 before:content-['\e003']"
                   ></a>
                   <a
-                    class="inline p-1 align-midle leading-none text-[110%] font-bold cursor-pointer text-[#fa8a8a] font-judgeme-icons before:content-['\e006']"
+                    class="inline p-1 align-midle leading-none text-[110%] font-bold cursor-pointer text-[#fa8a8a] font-judgeme-icons hover:opacity-60 before:content-['\e006']"
                   ></a>
                 </div>
               </div>
@@ -2940,9 +2919,9 @@
       </section>
 
       <section>
-        <div class="py-8 bg-[#f3eee0]">
+        <div class="py-8 bg-cream">
           <div class="container mx-auto px-[15px] md-custom:px-[50px]">
-            <div class="grid grid-cols-2 gap-6 leading-[1.3em] sm:flex">
+            <div class="grid grid-cols-2 gap-6 text-base sm:flex">
               <div class="w-full text-center">
                 <img
                   class="w-auto h-10 max-w-10 block mx-auto mb-4"
@@ -2989,21 +2968,19 @@
       </section>
 
       <section>
-        <div class="py-8 bg-[#f7f7f7] sm:py-14 sm:bg-transparent">
+        <div class="py-8 bg-light-gray sm:py-14 sm:bg-transparent">
           <div class="container mx-auto px-[15px] md-custom:px-[50px]">
             <div
-              class="flex rounded-xl bg-white overflow-hidden flex-wrap flex-col-reverse sm:flex-row sm:flex-nowrap sm:bg-[#f7f7f7]"
+              class="flex rounded-xl bg-white overflow-hidden flex-wrap flex-col-reverse sm:flex-row sm:flex-nowrap sm:bg-light-gray"
             >
-              <div class="w-full leading-[1.3em]">
+              <div class="w-full">
                 <div class="p-4 sm:p-8">
-                  <p class="text-[#737373]">July 4th, 2025</p>
-                  <h2
-                    class="text-2xl my-4 font-heading leading-[1.3em] sm:text-[32px]"
-                  >
+                  <p class="text-[#737373] text-base">July 4th, 2025</p>
+                  <h2 class="text-2xl my-4 font-heading sm:text-[32px]">
                     Expert Advice from Dr. Emily Chen of a Premier New York Skin
                     Clinic
                   </h2>
-                  <div class="text-lg leading-[1.3em]">
+                  <div class="text-lg">
                     <p class="my-3">
                       “Your nutrition plays a powerful role in your appearance.
                       If your body is missing key vitamins and nutrients, it
@@ -3012,30 +2989,27 @@
                       up against your skin, forming bumps you know as cellulite.
                     </p>
                     <p class="my-3">
-                      SmoothSkin by Sculptique™ contains ingredients that are
-                      scientifically proven to enhance microcirculation, boost
-                      lymphatic drainage, and reduce inflammation, which
-                      restores your tissue and breaks down the fat cells in your
-                      skin.”
+                      Lymphatic Drainage by Sculptique™ contains ingredients
+                      that are scientifically proven to enhance
+                      microcirculation, boost lymphatic drainage, and reduce
+                      inflammation, which restores your tissue and breaks down
+                      the fat cells in your skin.”
                     </p>
                   </div>
-                  <div class="mt-6">
+                  <div class="mt-6 text-left text-base font-primary">
                     <a
                       href="https://pay.trysculptique.com/lymphatic/checkout"
-                      class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center leading-[1.3em] transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
+                      class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
                       >Try Lymphatic Drainage Risk-Free</a
                     >
-
-                    <p
-                      class="flex items-center justify-center gap-4 leading-[1.3em] mt-4"
-                    >
-                      <span>
+                    <p class="flex items-center justify-center gap-4 mt-4">
+                      <span class="shrink-0">
                         <img
                           class="w-6 inline align-baseline"
                           src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/60-days_11622780_1_1.png?v=1752388395"
                         />
                       </span>
-                      <span>60-Day Money-Back Guarantee</span>
+                      <span> 60-Day Money-Back Guarantee </span>
                     </p>
                   </div>
                 </div>
@@ -3050,7 +3024,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section>
         <div class="py-8 sm:py-14 bg-[#f3eee0]">
@@ -3070,187 +3044,247 @@
               class="block relative -ml-2 w-[calc(100%+24px)] sm:ml-0 sm:w-full"
             >
               <div
-                class="slick-custom grid grid-cols-4 [&:not(.slick-initialized)>div:nth-child(n+5)]:hidden mb-10! pb-4"
+                class="slick-custom grid grid-cols-4 [&:not(.slick-initialized)>div:nth-child(n+5)]:hidden mb-10!"
               >
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_12.40.11.png?v=1752486039"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/014b7db24d12443791bd22d345637ccc.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_12.40.11.png?v=1752486039"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/014b7db24d12443791bd22d345637ccc.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_16.12.02.png?v=1752498744"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/4eecdc1058f349628e1c50ba81112b54.mov"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_16.12.02.png?v=1752498744"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/4eecdc1058f349628e1c50ba81112b54.mov"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.43.04.png?v=1752497038"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/2967808b09114feb9616d295fd2f3557.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.43.04.png?v=1752497038"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/2967808b09114feb9616d295fd2f3557.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.43.34.png?v=1752497063"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/88efaa94523742bdb8f980d66600cde2.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.43.34.png?v=1752497063"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/88efaa94523742bdb8f980d66600cde2.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_16.11.50.png?v=1752498777"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/a7bce8da322747e08ef1ce7c87317c30.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_16.11.50.png?v=1752498777"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/a7bce8da322747e08ef1ce7c87317c30.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.43.10.png?v=1752497092"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/3a117937ae264508b440a6972ebcb6a1.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.43.10.png?v=1752497092"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/3a117937ae264508b440a6972ebcb6a1.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.44.54.png?v=1752497118"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/27085ed5be5c4c38ad579f0fdae8aefa.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.44.54.png?v=1752497118"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/27085ed5be5c4c38ad579f0fdae8aefa.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.46.37.png?v=1752497216"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/a4ab9e815f3446ea8b84292627ec2a10.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.46.37.png?v=1752497216"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/a4ab9e815f3446ea8b84292627ec2a10.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.45.36.png?v=1752497166"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/68b2aa06fab44d968723e052a14d87d5.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.45.36.png?v=1752497166"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/68b2aa06fab44d968723e052a14d87d5.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  class="video-item relative overflow-hidden cursor-pointer rounded p-2"
-                >
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
-                    class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
-                  />
-                  <video
-                    class="w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
-                    playsinline
-                    poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.47.12.png?v=1752497252"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/0ec8de99a9c3459da6c53e18c0eeab3c.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                <div class="p-2">
+                  <div>
+                    <div class="inline-block w-full">
+                      <div
+                        class="video-item relative overflow-hidden cursor-pointer rounded"
+                      >
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
+                          class="play-icon absolute w-8 h-8 top-[calc(50%-16px)] left-[calc(50%-16px)]"
+                        />
+                        <video
+                          class="inline align-baseline w-full h-full object-cover aspect-[9/16] rounded overflow-hidden"
+                          playsinline
+                          poster="//trysculptique.com/cdn/shop/files/Screenshot_2025-07-14_at_15.47.12.png?v=1752497252"
+                        >
+                          <source
+                            src="https://cdn.shopify.com/videos/c/o/v/0ec8de99a9c3459da6c53e18c0eeab3c.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -3270,22 +3304,20 @@
                 </div>
               </div>
             </video-carousel>
-            <div class="mt-8 text-center">
+            <div class="mt-8 text-center text-base font-primary">
               <a
                 href="https://pay.trysculptique.com/lymphatic/checkout"
-                class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center leading-[1.3em] transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
+                class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
                 >Try Lymphatic Drainage Risk-Free</a
               >
-              <p
-                class="flex items-center justify-center gap-4 leading-[1.3em] mt-4"
-              >
-                <span>
+              <p class="flex items-center justify-center gap-4 mt-4">
+                <span class="shrink-0">
                   <img
                     class="w-6 inline align-baseline"
                     src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/60-days_11622780_1_1.png?v=1752388395"
                   />
                 </span>
-                <span>60-Day Money-Back Guarantee</span>
+                <span> 60-Day Money-Back Guarantee </span>
               </p>
             </div>
           </div>
@@ -3295,25 +3327,23 @@
       <section>
         <div class="py-8 sm:py-14">
           <div class="container mx-auto px-[15px] md-custom:px-[50px]">
-            <h2
-              class="text-2xl my-4 font-heading leading-[1.3em] text-center sm:text-[32px]"
-            >
+            <h2 class="text-2xl my-4 font-heading text-center sm:text-[32px]">
               Frequently Asked Questions
             </h2>
             <faq-accordion
-              class="block max-w-[824px] m-auto rounded-2xl overflow-hidden p-4 bg-[linear-gradient(180deg,#fff,#f3eee0)] sm:p-8 [&_.faq-item.active_.icon]:rotate-180"
+              class="block max-w-206 m-auto rounded-2xl overflow-hidden p-4 bg-[linear-gradient(180deg,#fff,#f3eee0)] sm:p-8 [&_.faq-item.active_.icon]:rotate-180"
             >
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>
                       How is this different from lymphatic drops I saw on
                       TikTok?
                     </p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3348,13 +3378,13 @@
                 </div>
               </div>
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>Why didn't my diet changes work?</p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3381,13 +3411,13 @@
                 </div>
               </div>
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>How long until I see results?</p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3414,13 +3444,13 @@
                 </div>
               </div>
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>Is this safe? Any side effects?</p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3449,13 +3479,13 @@
                 </div>
               </div>
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>Can I take this with other supplements?</p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3481,13 +3511,13 @@
                 </div>
               </div>
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>How do I use it?</p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3512,13 +3542,13 @@
                 </div>
               </div>
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>What if it doesn't work for me?</p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3544,13 +3574,13 @@
                 </div>
               </div>
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>Where is this manufactured?</p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3577,13 +3607,13 @@
                 </div>
               </div>
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>Why isn't this in stores?</p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3610,13 +3640,13 @@
                 </div>
               </div>
               <div
-                class="faq-item py-4 cursor-pointer border-b border-white text-lg sm:py-5 sm:px-6"
+                class="faq-item py-4 cursor-pointer border-b border-white sm:py-5 sm:px-6"
               >
                 <div class="faq-header flex items-center justify-between gap-3">
-                  <div>
+                  <div class="text-lg">
                     <p>Is this vegan/gluten-free?</p>
                   </div>
-                  <div class="leading-[1.8] text-[15px] sm:text-base">
+                  <div>
                     <div
                       class="icon w-4 h-4 inline-block transition-all duration-200"
                     >
@@ -3640,22 +3670,20 @@
                 </div>
               </div>
             </faq-accordion>
-            <div class="mt-6 text-center">
+            <div class="mt-6 text-center text-base font-primary">
               <a
                 href="https://pay.trysculptique.com/lymphatic/checkout"
-                class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center leading-[1.3em] transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
+                class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
                 >Try Lymphatic Drainage Risk-Free</a
               >
-              <p
-                class="flex items-center justify-center gap-4 leading-[1.3em] mt-4"
-              >
-                <span>
+              <p class="flex items-center justify-center gap-4 mt-4">
+                <span class="shrink-0">
                   <img
                     class="w-6 inline align-baseline"
                     src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/60-days_11622780_1_1.png?v=1752388395"
                   />
                 </span>
-                <span> 60-Day Money-Back Guarantee</span>
+                <span> 60-Day Money-Back Guarantee </span>
               </p>
             </div>
           </div>
@@ -3670,15 +3698,11 @@
             >
               <div class="w-full">
                 <div class="px-4 sm:px-8">
-                  <h2
-                    class="text-2xl leading-[1.3em] my-4 font-heading sm:text-[32px]"
-                  >
+                  <h2 class="text-2xl my-4 font-heading sm:text-[32px]">
                     We’re On A Mission To Help 100,000,000 Women Visibly,
                     Naturally Get Rid Of Bloating…And Feel Like Themselves Again
                   </h2>
-                  <p class="my-3 text-lg leading-[1.3em]">
-                    Here's where we're at right now:
-                  </p>
+                  <p class="my-3 text-lg">Here's where we're at right now:</p>
                   <img
                     loading="lazy"
                     class="inline align-baseline w-full sm:hidden"
@@ -3744,23 +3768,22 @@
                   src="//trysculptique.com/cdn/shop/files/before-min_png.png?v=1760688928"
                 />
                 <div class="py-px"></div>
-                <div class="mt-6 max-w-[495px]">
+                <div
+                  class="mt-6 text-left text-base font-primary max-w-[495px]"
+                >
                   <a
                     href="https://pay.trysculptique.com/lymphatic/checkout"
-                    class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center leading-[1.3em] transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
+                    class="block p-4 cursor-pointer text-white bg-black rounded-sm text-center transition-all duration-200 hover:opacity-70 sm:inline-block sm:py-4.5 sm:px-20 sm:text-lg"
                     >Try Lymphatic Drainage Risk-Free</a
                   >
-
-                  <p
-                    class="flex items-center justify-center gap-4 leading-[1.3em] mt-4"
-                  >
-                    <span>
+                  <p class="flex items-center justify-center gap-4 mt-4">
+                    <span class="shrink-0">
                       <img
                         class="w-6 inline align-baseline"
                         src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/60-days_11622780_1_1.png?v=1752388395"
                       />
                     </span>
-                    <span>60-Day Money-Back Guarantee</span>
+                    <span> 60-Day Money-Back Guarantee </span>
                   </p>
                 </div>
               </div>
